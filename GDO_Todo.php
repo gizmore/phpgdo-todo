@@ -65,7 +65,7 @@ final class GDO_Todo extends GDO
     ##############
     public function displayTitle()
     {
-        return $this->display('todo_text');
+        return $this->gdoDisplay('todo_text');
     }
     
     public function displayCompleted()
