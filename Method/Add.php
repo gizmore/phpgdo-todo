@@ -22,12 +22,12 @@ final class Add extends MethodForm
     public function createForm(GDT_Form $form) : void
     {
         $table = GDO_Todo::table();
-        $form->addFields([
+        $form->addFields(
             $table->gdoColumn('todo_text'),
             $table->gdoColumn('todo_priority'),
             $table->gdoColumn('todo_description'),
             GDT_AntiCSRF::make(),
-        ]);
+        );
         $form->actions()->addField(GDT_Submit::make());
     }
     

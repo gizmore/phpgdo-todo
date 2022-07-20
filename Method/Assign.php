@@ -25,12 +25,12 @@ final class Assign extends MethodForm
     
     public function createForm(GDT_Form $form) : void
     {
-        $form->addFields([
+        $form->addFields(
             GDT_Todo::make('id')->label('id'),
             GDT_Validator::make('already_completed')->validator('id', [Completed::make(), 'validateAlreadyCompleted']),
             GDT_User::make('to')->label('to')->fallbackCurrentUser(),
             GDT_Validator::make('can_assign')->validator('to', [$this, 'validateCanAssign']),
-        ]);
+        );
         $form->actions()->addField(GDT_Submit::make());
     }
     
