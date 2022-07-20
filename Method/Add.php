@@ -14,7 +14,7 @@ use GDO\Todo\Module_Todo;
  */
 final class Add extends MethodForm
 {
-    public function isGuestAllowed()
+    public function isGuestAllowed() : bool
     {
         return Module_Todo::instance()->cfgAddGuests();
     }

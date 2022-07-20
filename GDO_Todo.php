@@ -54,7 +54,7 @@ final class GDO_Todo extends GDO
     /**
      * @return GDO_User
      */
-    public function getCreator() { return $this->getValue('todo_creator'); }
+    public function getCreator() { return $this->gdoValue('todo_creator'); }
     public function getCreatorID() { return $this->gdoVar('todo_creator'); }
     public function isAssigned() { return $this->gdoVar('todo_assigned') !== null; }
     public function isCompleted() { return $this->getCompleted() !== null; }
