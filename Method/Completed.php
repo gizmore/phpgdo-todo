@@ -23,7 +23,7 @@ final class Completed extends MethodForm
         $form->addFields(
             GDT_Todo::make('id'),
             GDT_User::make('by')->label('by')->fallbackCurrentUser(),
-            GDT_Validator::make('already_completed')->validator('id', [$this, 'validateAlreadyCompleted']),
+            GDT_Validator::make('already_completed')->validatorFor($form, 'id', [$this, 'validateAlreadyCompleted']),
             GDT_AntiCSRF::make(),
         );
         $form->actions()->addField(GDT_Submit::make());
