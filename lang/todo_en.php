@@ -25,12 +25,12 @@ return [
     
     # Add
     'link_todo_add' => 'New ToDo entry',
-    'ft_todo_add' => 'Add a ToDo entry.',
+    'mt_todo_add' => 'Add a ToDo entry.',
     
     # Edit
 
     # Search
-    'mtitle_todo_search' => 'Search ToDo\'s',
+    'mt_todo_search' => 'Search ToDo\'s',
     'list_todo_search' => '%s ToDo\'s',
     
     # Assign
@@ -42,6 +42,6 @@ return [
     'msg_todo_completed' => 'ToDo #%s has been completed by %s on %s.',
     
     # Show
-    'mtitle_todo_show' => 'Show a todo entry.',
+    'mt_todo_show' => 'Show a todo entry.',
     
 ];

@@ -16,7 +16,7 @@ use GDO\Todo\GDO_Todo;
  */
 final class Edit extends MethodCrud
 {
-    public function gdoTable()
+    public function gdoTable() : GDO
     {
         return GDO_Todo::table();
     }

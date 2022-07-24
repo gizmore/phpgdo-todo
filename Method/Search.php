@@ -3,6 +3,7 @@ namespace GDO\Todo\Method;
 
 use GDO\Table\MethodQueryList;
 use GDO\Todo\GDO_Todo;
+use GDO\Core\GDO;
 use GDO\Core\GDT_Checkbox;
 
 /**
@@ -24,7 +25,7 @@ final class Search extends MethodQueryList
         ]);
     }
     
-    public function gdoTable()
+    public function gdoTable() : GDO
     {
         return GDO_Todo::table();
     }

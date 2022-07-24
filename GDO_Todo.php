@@ -6,16 +6,15 @@ use GDO\Core\GDT_AutoInc;
 use GDO\UI\GDT_Message;
 use GDO\Core\GDT_CreatedAt;
 use GDO\Core\GDT_CreatedBy;
-use GDO\DB\GDT_DeletedAt;
-use GDO\DB\GDT_DeletedBy;
+use GDO\Core\GDT_DeletedAt;
+use GDO\Core\GDT_DeletedBy;
 use GDO\Date\GDT_DateTime;
 use GDO\Date\Time;
 use GDO\User\GDT_User;
 use GDO\Core\GDT_EditedAt;
-use GDO\DB\GDT_EditedBy;
+use GDO\Core\GDT_EditedBy;
 use GDO\Core\GDT_Template;
 use GDO\User\GDO_User;
-use GDO\Core\GDT_Name;
 use GDO\UI\GDT_Title;
 
 /**
