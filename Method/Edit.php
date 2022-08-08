@@ -26,7 +26,7 @@ final class Edit extends MethodCrud
         return false;
     }
     
-    public function hrefList()
+    public function hrefList() : string
     {
         return href('Todo', 'Search');
     }
