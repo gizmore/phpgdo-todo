@@ -20,9 +20,11 @@ final class Completed extends MethodForm
 {
     public function createForm(GDT_Form $form) : void
     {
-        $form->addFields(
+    	$form->addFields(
             GDT_Todo::make('id'),
             GDT_User::make('by')->label('by')->fallbackCurrentUser(),
+   		);
+        $form->addFields(
             GDT_Validator::make('already_completed')->validatorFor($form, 'id', [$this, 'validateAlreadyCompleted']),
             GDT_AntiCSRF::make(),
         );
