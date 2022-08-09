@@ -5,6 +5,7 @@ use GDO\Table\MethodQueryList;
 use GDO\Todo\GDO_Todo;
 use GDO\Core\GDO;
 use GDO\Core\GDT_Checkbox;
+use GDO\DB\Query;
 
 /**
  * List todo entries.
@@ -30,7 +31,7 @@ final class Search extends MethodQueryList
         return GDO_Todo::table();
     }
     
-    public function getQuery()
+    public function getQuery() : Query
     {
         $query = parent::getQuery();
         if (!$this->gdoParameterValue('deleted'))
