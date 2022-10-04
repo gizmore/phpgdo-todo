@@ -48,7 +48,7 @@ final class Assign extends MethodForm
             {
                 return true;
             }
-            return $field->error('err_todo_assign', [$value->displayName()]);
+            return $field->error('err_todo_assign', [$value->renderName()]);
         }
         return true;
     }
