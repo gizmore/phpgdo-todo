@@ -1,4 +1,5 @@
 <?php
+namespace GDO\Todo\lang;
 return [
     # Config
     'todo_left_bar' => 'Show in left Sidebar?',

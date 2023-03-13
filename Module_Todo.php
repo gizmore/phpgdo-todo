@@ -57,8 +57,8 @@ final class Module_Todo extends GDO_Module
         if ($this->cfgSidebar())
         {
             GDT_Page::instance()->leftBar()->addFields(
-                GDT_Link::make('link_todo_add')->href(href('Todo', 'Add')),
-                GDT_Link::make('mt_todo_search')->href(href('Todo', 'Search')),
+                GDT_Link::make('link_todo_add')->icon('create')->href(href('Todo', 'Add')),
+            	GDT_Link::make('mt_todo_search')->icon('search')->href(href('Todo', 'Search')),
             );
         }
     }
