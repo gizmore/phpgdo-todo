@@ -3,6 +3,7 @@ namespace GDO\Todo;
 
 use GDO\Core\GDO_Module;
 use GDO\Core\GDT_Checkbox;
+use GDO\Core\Module_Core;
 use GDO\UI\GDT_Page;
 use GDO\UI\GDT_Link;
 
@@ -10,7 +11,7 @@ use GDO\UI\GDT_Link;
  * A todo database.
  * 
  * @author gizmore
- * @version 7.0.0
+ * @version 7.0.2
  * @since 6.11.3
  */
 final class Module_Todo extends GDO_Module
@@ -31,8 +32,15 @@ final class Module_Todo extends GDO_Module
             GDO_Todo::class,
         ];
     }
-    
-    ##############
+
+	public function getDependencies(): array
+	{
+		return [
+			'Table',
+		];
+	}
+
+	##############
     ### Config ###
     ##############
     public function getConfig() : array
@@ -42,8 +50,15 @@ final class Module_Todo extends GDO_Module
             GDT_Checkbox::make('todo_add_guests')->initial('1'),
         ];
     }
-    public function cfgSidebar() : string { return $this->getConfigVar('todo_left_bar'); }
-    public function cfgAddGuests() : string { return $this->getConfigVar('todo_add_guests'); }
+    public function cfgSidebar() : bool
+	{
+		return $this->getConfigValue('todo_left_bar');
+	}
+    public function cfgAddGuests() : bool
+	{
+		return $this->getConfigValue('todo_add_guests') &&
+			Module_Core::instance()->cfgAllowGuests();
+	}
     
     ############
     ### Init ###

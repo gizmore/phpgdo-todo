@@ -34,7 +34,7 @@ final class Add extends MethodForm
     public function formValidated(GDT_Form $form)
     {
         $todo = GDO_Todo::blank($form->getFormVars())->insert();
-        return $this->messageCreated($todo, true);
+        return $this->message('msg_todo_created', [$todo->getID()]);
     }
     
 }

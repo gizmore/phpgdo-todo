@@ -2,6 +2,7 @@
 namespace GDO\Todo\Method;
 
 use GDO\Core\GDO;
+use GDO\Core\GDO_Error;
 use GDO\Form\GDT_Form;
 use GDO\Form\MethodCrud;
 use GDO\Todo\GDO_Todo;
@@ -21,7 +22,7 @@ final class Edit extends MethodCrud
         return GDO_Todo::table();
     }
 
-    public function canCreate(GDO $table)
+    public function featureCreate(): bool
     {
         return false;
     }
@@ -31,7 +32,20 @@ final class Edit extends MethodCrud
         return href('Todo', 'Search');
     }
 
-    public function createForm(GDT_Form $form) : void
+ 	public function onMethodInit()
+	{
+		if (!$this->getCRUDID())
+		{
+			return $this->error('err_cannot_create_todo');
+		}
+		return parent::onMethodInit();
+	}
+
+
+	/**
+	 * @throws GDO_Error
+	 */
+	public function createForm(GDT_Form $form) : void
     {
         parent::createForm($form);
         $form->getField('todo_text')->notNull(false);

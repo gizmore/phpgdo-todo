@@ -34,13 +34,15 @@ final class Search extends MethodQueryList
     public function getQuery() : Query
     {
         $query = parent::getQuery();
-        if (!$this->gdoParameterValue('deleted'))
+        if (null !== ($deleted = $this->gdoParameterValue('deleted')))
         {
-            $query->where("todo_deleted IS NULL");
+			$condition = $deleted ? 'NOT NULL' : 'NULL';
+			$query->where("todo_deleted IS {$condition}");
         }
-        if (!$this->gdoParameterValue('completed'))
+        if (null !== ($completed = $this->gdoParameterValue('completed')))
         {
-            $query->where("todo_completed IS NULL");
+			$condition = $completed ? 'NOT NULL' : 'NULL';
+            $query->where("todo_completed IS {$condition}");
         }
         return $query;
     }

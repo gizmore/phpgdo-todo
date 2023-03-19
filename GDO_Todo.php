@@ -31,9 +31,9 @@ final class GDO_Todo extends GDO
     {
         return [
             GDT_AutoInc::make('todo_id'),
-            GDT_Title::make('todo_text')->notNull()->label('text'),
-            GDT_TodoPriority::make('todo_priority')->label('priority'),
-            GDT_Message::make('todo_description')->label('description'),
+            GDT_Title::make('todo_text')->notNull()->label('text')->as('text'),
+            GDT_TodoPriority::make('todo_priority')->label('priority')->as('priority'),
+            GDT_Message::make('todo_description')->label('description')->as('description'),
             GDT_CreatedAt::make('todo_created'),
             GDT_CreatedBy::make('todo_creator'),
             GDT_EditedAt::make('todo_edited'),
@@ -74,7 +74,7 @@ final class GDO_Todo extends GDO
     
     public function renderCard() : string
     {
-        return GDT_Template::templatePHP(
+        return GDT_Template::php(
             'Todo', 'todo_card.php',
             ['todo' => $this]);
     }

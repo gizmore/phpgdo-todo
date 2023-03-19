@@ -35,7 +35,7 @@ final class Completed extends MethodForm
     {
         if ($value && $value->isCompleted())
         {
-            $field->error('err_todo_already_completed');
+            return $field->error('err_todo_already_completed');
         }
         return true;
     }

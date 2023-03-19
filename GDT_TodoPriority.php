@@ -14,7 +14,7 @@ final class GDT_TodoPriority extends GDT_Enum
     const MEDIUM = 'medium';
     const HIGH = 'high';
     
-    public function defaultLabel() : self { return $this->label('priority'); }
+    public function defaultLabel(): static { return $this->label('priority'); }
     
     # GDT
     protected function __construct()

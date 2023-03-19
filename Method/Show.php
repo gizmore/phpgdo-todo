@@ -4,6 +4,7 @@ namespace GDO\Todo\Method;
 use GDO\Core\Method;
 use GDO\Todo\GDT_Todo;
 use GDO\Todo\GDO_Todo;
+use GDO\UI\GDT_HTML;
 
 /**
  * Show a todo item.
@@ -30,7 +31,7 @@ final class Show extends Method
     
     public function execute()
     {
-        return $this->getToDo()->renderCard();
+        return GDT_HTML::make()->var($this->getToDo()->renderCard());
     }
     
 }

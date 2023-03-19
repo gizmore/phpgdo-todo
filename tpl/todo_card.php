@@ -1,2 +1,1 @@
-<?phpnamespace GDO\Todo\tpl;use GDO\UI\GDT_Card;use GDO\UI\GDT_Title;/** @var $todo \GDO\Todo\GDO_Todo **/
-$card = GDT_Card::make()->gdo($todo);$card->creatorHeader(GDT_Title::make()->titleRaw($todo->displayTitle()));$card->editorFooter();$card->addFields(    $todo->gdoColumn('todo_priority'),    $todo->gdoColumn('todo_description'),);echo $card->render();
+<?phpnamespace GDO\Todo\tpl;use GDO\UI\GDT_Card;use GDO\UI\GDT_Title;/** @var $todo \GDO\Todo\GDO_Todo **/$card = GDT_Card::make()->gdo($todo);$card->creatorHeader(null, null, $todo->displayTitle());$card->editorFooter();$card->addFields(    $todo->gdoColumn('todo_priority'),    $todo->gdoColumn('todo_description'),);echo $card->render();
