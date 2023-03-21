@@ -11,28 +11,29 @@ use GDO\Todo\GDO_Todo;
  * This CRUD method for GDO_Todo does not allow create.
  * Create is done in the Add method.
  * Edit and delete is for staff only.
- * 
+ *
  * @author gizmore
  * @see Add
  */
 final class Edit extends MethodCrud
 {
-    public function gdoTable() : GDO
-    {
-        return GDO_Todo::table();
-    }
 
-    public function featureCreate(): bool
-    {
-        return false;
-    }
-    
-    public function hrefList() : string
-    {
-        return href('Todo', 'Search');
-    }
+	public function gdoTable(): GDO
+	{
+		return GDO_Todo::table();
+	}
 
- 	public function onMethodInit()
+	public function featureCreate(): bool
+	{
+		return false;
+	}
+
+	public function hrefList(): string
+	{
+		return href('Todo', 'Search');
+	}
+
+	public function onMethodInit()
 	{
 		if (!$this->getCRUDID())
 		{
@@ -45,10 +46,10 @@ final class Edit extends MethodCrud
 	/**
 	 * @throws GDO_Error
 	 */
-	public function createForm(GDT_Form $form) : void
-    {
-        parent::createForm($form);
-        $form->getField('todo_text')->notNull(false);
-    }
-    
+	public function createForm(GDT_Form $form): void
+	{
+		parent::createForm($form);
+		$form->getField('todo_text')->notNull(false);
+	}
+
 }

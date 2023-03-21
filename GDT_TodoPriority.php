@@ -5,24 +5,27 @@ use GDO\Core\GDT_Enum;
 
 /**
  * A todo priority selection.
+ *
  * @author gizmore
  */
 final class GDT_TodoPriority extends GDT_Enum
 {
-    # Priorities
-    const LOW = 'low';
-    const MEDIUM = 'medium';
-    const HIGH = 'high';
-    
-    public function defaultLabel(): static { return $this->label('priority'); }
-    
-    # GDT
-    protected function __construct()
-    {
-        parent::__construct();
-        $this->enumValues(self::LOW, self::MEDIUM, self::HIGH);
-        $this->notNull();
-        $this->initial(self::LOW);
-    }
+
+	# Priorities
+	public const LOW = 'low';
+	public const MEDIUM = 'medium';
+	public const HIGH = 'high';
+
+	protected function __construct()
+	{
+		parent::__construct();
+		$this->enumValues(self::LOW, self::MEDIUM, self::HIGH);
+		$this->notNull();
+		$this->initial(self::LOW);
+	}
+
+	# GDT
+
+	public function defaultLabel(): self { return $this->label('priority'); }
 
 }
