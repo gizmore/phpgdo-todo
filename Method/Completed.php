@@ -1,6 +1,7 @@
 <?php
 namespace GDO\Todo\Method;
 
+use GDO\Core\GDT;
 use GDO\Date\Time;
 use GDO\Form\GDT_AntiCSRF;
 use GDO\Form\GDT_Form;
@@ -33,7 +34,7 @@ final class Completed extends MethodForm
 		$form->actions()->addField(GDT_Submit::make());
 	}
 
-	public function formValidated(GDT_Form $form)
+	public function formValidated(GDT_Form $form): GDT
 	{
 		$todo = $this->getTodoEntry();
 		$user = $this->getTodoCompletor();

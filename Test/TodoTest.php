@@ -50,7 +50,7 @@ final class TodoTest extends TestCase
 
 		# Read
 		$r = $this->cli('todo.show 2');
-		$this->assertStringContainsStringsIgnoringCase(
+		$this->assertStringContainsStringsCI(
 			['ID: 2', 'Priority: High', 'Description test', 'Add priorities and description to ToDo items.'],
 			$r, 'Test if todo item with high prio and description can be viewed.');
 	}

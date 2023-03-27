@@ -3,6 +3,7 @@ namespace GDO\Todo\Method;
 
 use GDO\Core\GDO;
 use GDO\Core\GDO_Error;
+use GDO\Core\GDT;
 use GDO\Form\GDT_Form;
 use GDO\Form\MethodCrud;
 use GDO\Todo\GDO_Todo;
@@ -33,7 +34,7 @@ final class Edit extends MethodCrud
 		return href('Todo', 'Search');
 	}
 
-	public function onMethodInit()
+	public function onMethodInit(): ?GDT
 	{
 		if (!$this->getCRUDID())
 		{

@@ -1,6 +1,7 @@
 <?php
 namespace GDO\Todo\Method;
 
+use GDO\Core\GDT;
 use GDO\Form\GDT_AntiCSRF;
 use GDO\Form\GDT_Form;
 use GDO\Form\GDT_Submit;
@@ -16,7 +17,7 @@ use GDO\Todo\Module_Todo;
 final class Add extends MethodForm
 {
 
-	public function isGuestAllowed(): bool
+	public function isGuestAllowed(): string
 	{
 		return Module_Todo::instance()->cfgAddGuests();
 	}
@@ -33,7 +34,7 @@ final class Add extends MethodForm
 		$form->actions()->addField(GDT_Submit::make());
 	}
 
-	public function formValidated(GDT_Form $form)
+	public function formValidated(GDT_Form $form): GDT
 	{
 		$todo = GDO_Todo::blank($form->getFormVars())->insert();
 		return $this->message('msg_todo_created', [$todo->getID()]);

@@ -1,6 +1,7 @@
 <?php
 namespace GDO\Todo\Method;
 
+use GDO\Core\GDT;
 use GDO\Date\Time;
 use GDO\Form\GDT_Form;
 use GDO\Form\GDT_Submit;
@@ -20,7 +21,7 @@ use GDO\User\GDT_User;
 final class Assign extends MethodForm
 {
 
-	public function isGuestAllowed(): bool
+	public function isGuestAllowed(): string
 	{
 		return Module_Todo::instance()->cfgAddGuests();
 	}
@@ -38,7 +39,7 @@ final class Assign extends MethodForm
 		$form->actions()->addField(GDT_Submit::make());
 	}
 
-	public function formValidated(GDT_Form $form)
+	public function formValidated(GDT_Form $form): GDT
 	{
 		$user = $this->getUser();
 		$todo = $this->getToDo();

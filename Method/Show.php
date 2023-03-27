@@ -1,6 +1,7 @@
 <?php
 namespace GDO\Todo\Method;
 
+use GDO\Core\GDT;
 use GDO\Core\Method;
 use GDO\Todo\GDO_Todo;
 use GDO\Todo\GDT_Todo;
@@ -22,7 +23,7 @@ final class Show extends Method
 		];
 	}
 
-	public function execute()
+	public function execute(): GDT
 	{
 		return GDT_HTML::make()->var($this->getToDo()->renderCard());
 	}
