@@ -10,7 +10,7 @@ use function PHPUnit\Framework\assertStringContainsStringIgnoringCase;
 
 /**
  * Test the Todo module.
- * Tests are done using the CLI rendering and method handling.
+ * Test are done using the CLI rendering and method handling.
  * This is a nice test suite for cli behaviour and general form stuff.
  * This is a nice test suite for GDT_Table pagination.
  *
