@@ -2,7 +2,7 @@
 namespace GDO\Todo\Method;
 
 use GDO\Core\GDO;
-use GDO\Core\GDO_Error;
+use GDO\Core\GDO_Exception;
 use GDO\Core\GDT;
 use GDO\Form\GDT_Form;
 use GDO\Form\MethodCrud;
@@ -45,9 +45,9 @@ final class Edit extends MethodCrud
 
 
 	/**
-	 * @throws GDO_Error
+	 * @throws GDO_Exception
 	 */
-	public function createForm(GDT_Form $form): void
+	protected function createForm(GDT_Form $form): void
 	{
 		parent::createForm($form);
 		$form->getField('todo_text')->notNull(false);

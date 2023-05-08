@@ -21,7 +21,7 @@ use GDO\User\GDT_User;
 final class Completed extends MethodForm
 {
 
-	public function createForm(GDT_Form $form): void
+	protected function createForm(GDT_Form $form): void
 	{
 		$form->addFields(
 			GDT_Todo::make('id'),

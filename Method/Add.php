@@ -17,12 +17,12 @@ use GDO\Todo\Module_Todo;
 final class Add extends MethodForm
 {
 
-	public function isGuestAllowed(): string
+	public function isGuestAllowed(): bool
 	{
 		return Module_Todo::instance()->cfgAddGuests();
 	}
 
-	public function createForm(GDT_Form $form): void
+	protected function createForm(GDT_Form $form): void
 	{
 		$table = GDO_Todo::table();
 		$form->addFields(

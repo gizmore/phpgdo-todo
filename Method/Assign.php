@@ -21,12 +21,12 @@ use GDO\User\GDT_User;
 final class Assign extends MethodForm
 {
 
-	public function isGuestAllowed(): string
+	public function isGuestAllowed(): bool
 	{
 		return Module_Todo::instance()->cfgAddGuests();
 	}
 
-	public function createForm(GDT_Form $form): void
+	protected function createForm(GDT_Form $form): void
 	{
 		$form->addFields(
 			GDT_Todo::make('id')->label('id'),
