@@ -26,6 +26,7 @@ final class GDT_TodoPriority extends GDT_Enum
 
 	# GDT
 
-	public function defaultLabel(): self { return $this->label('priority'); }
+	public function gdtDefaultLabel(): ?string
+    { return 'priority'; }
 
 }
