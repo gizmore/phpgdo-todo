@@ -21,7 +21,6 @@ return [
 	'enum_medium' => 'Medium',
 	'enum_high' => 'High',
 	'assigned_on' => 'Assigned',
-	'to' => 'to',
 	'completed_on' => 'Completed',
 	'by' => 'by',
 
